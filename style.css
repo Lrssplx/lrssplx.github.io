@@ -74,12 +74,7 @@ body {
 /* ================= HERO ================= */
 
 header {
-  min-height: 25vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
+  padding: 110px 20px 70px;
 }
 
 .hero h1 {
@@ -108,11 +103,42 @@ header {
   font-weight: 600;
   border-radius: 6px;
   transition: 0.3s ease;
+  width: fit-content;
 }
 
 .btn:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+}
+
+.hero-flex {
+  display: flex;
+  align-items: center;
+ justify-content: flex-start;
+  gap: 70px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 520px;
+}
+.hero-text h1 {
+  margin-bottom: 10px;
+}
+
+.hero-image img {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+}
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ================= SECTIONS ================= */
@@ -278,5 +304,17 @@ footer {
 @media (max-width: 600px) {
   .cert-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 170px;
+    height: 170px;
   }
 }

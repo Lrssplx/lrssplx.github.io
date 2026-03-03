@@ -37,12 +37,8 @@ body {
   margin: 0 auto;
   padding: 18px 20px;
   display: flex;
-  justify-content: flex-end;  
+  justify-content: flex-end;
   align-items: center;
-}
-.logo {
-  color: #38bdf8;
-  font-weight: 700;
 }
 
 .nav-links {
@@ -55,6 +51,11 @@ body {
   text-decoration: none;
   color: #cbd5e1;
   font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
 }
 
 .hamburger {
@@ -106,6 +107,12 @@ header {
   text-decoration: none;
   font-weight: 600;
   border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
 }
 
 /* ================= SECTIONS ================= */
@@ -135,19 +142,47 @@ h2 {
 
 .skills-grid,
 .projects-grid,
-.contact-grid {
+.contact-grid,
+.cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
 }
 
+/* Skills, Projects e Contact continuam responsivos */
+.skills-grid,
+.projects-grid,
+.contact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Certificações fixas em 4 colunas desktop */
+.cert-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ================= CARDS ================= */
+
 .skill-card,
 .project-card,
-.contact-card {
+.contact-card,
+.cert-card {
   background: #1f2937;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
+
+/* Hover padronizado para todas as seções */
+.skill-card:hover,
+.project-card:hover,
+.contact-card:hover,
+.cert-card:hover {
+  transform: translateY(-6px);
+  background: #243041;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+/* ================= PROJECT IMAGES ================= */
 
 .project-card img {
   width: 100%;
@@ -155,49 +190,25 @@ h2 {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
+  transition: transform 0.4s ease;
 }
 
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -260px;   /* começa fora da tela */
-    height: 100vh;
-    width: 260px;
-    background: #111827;
-    display: flex;
-    flex-direction: column;
-    padding: 100px 20px;
-    gap: 20px;
-    transition: right 0.3s ease;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    right: 0;   /* desliza para dentro */
-  }
-
-  .hamburger {
-    display: flex;
-    z-index: 1001;
-  }
+.project-card:hover img {
+  transform: scale(1.05);
 }
+
+/* ================= CERTIFICACOES ================= */
+
+.cert-card {
+  text-align: center;
+}
+
+.cert-card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
 /* ================= CONTACT ================= */
-
-.contact-card {
-  background: #1f2937;
-  padding: 30px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-4px);
-  background: #243041;
-}
 
 .contact-card h3 {
   margin-bottom: 12px;
@@ -226,4 +237,46 @@ footer {
   padding: 25px 20px;
   font-size: 14px;
   color: #94a3b8;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 1024px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    height: 100vh;
+    width: 260px;
+    background: #111827;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20px;
+    gap: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
+}
+
+@media (max-width: 600px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
 }

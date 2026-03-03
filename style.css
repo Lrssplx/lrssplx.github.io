@@ -74,7 +74,7 @@ body {
 /* ================= HERO ================= */
 
 header {
-  min-height: 75vh;
+  min-height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;

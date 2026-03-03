@@ -324,11 +324,40 @@ footer {
 
   .hero-image img {
     width: 170px;
-    height: 170px;
+    height:
+     170px;
   }
-
+  
+}
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  background: transparent;
 }
 
+button.hero-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+}
+.outline-btn {
+  background: transparent;
+  color: #38bdf8;
+  border: none;
+  padding: 0;
+}
+
+.outline-btn:hover {
+  text-decoration: underline;
+}
 @media (max-width: 600px) {
   .cert-grid {
     grid-template-columns: 1fr;

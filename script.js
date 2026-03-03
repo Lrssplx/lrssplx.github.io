@@ -20,3 +20,20 @@ function copyLink() {
   navigator.clipboard.writeText(window.location.href);
   alert('Link copiado com sucesso!');
 }
+function compartilhar() {
+  const url = "https://lrssplx.github.io/";
+  const texto = "Confira meu portfólio profissional";
+
+  if (navigator.share) {
+    navigator.share({
+      title: "Portfólio Larissa",
+      text: texto,
+      url: url
+    });
+  } else {
+    window.open(
+      `https://api.whatsapp.com/send?text=${encodeURIComponent(texto + " " + url)}`,
+      "_blank"
+    );
+  }
+}
